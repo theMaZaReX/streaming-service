@@ -1,0 +1,6 @@
+/build
+/node_modules
+/src/img
+gulpfile.js
+package.json
+package-lock.json
