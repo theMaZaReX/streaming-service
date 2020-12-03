@@ -1,0 +1,54 @@
+.header{
+    background-image:url('../img/bck-header.svg');
+    background-size: cover;
+    &__inner{
+        min-height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo{
+    font-family: "Montserrat-Bold";
+    font-size: 30px;
+    text-transform: uppercase;
+    &__link{
+        padding:15px 0px;
+        color:#ededed;
+    }
+    &__link--red{
+        color:#d72323;
+    }
+}
+
+.search{
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    position: relative;
+    &__input{
+        background-color: #414f57;
+        min-height: 35px;
+        border-radius: 17px;
+        border:0px;
+        width:300px;
+    }
+    &__input::placeholder{
+        padding-left:12px;
+        color:#dadada;
+    }
+    &__button{
+        position: absolute;
+        width: 21px;
+        height: 21px;
+        border:0px;
+        background-image:url('../img/search.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #414f57;
+        position: absolute;
+        top: 20%;
+        right: 4%;
+        cursor: pointer;
+    }
+}

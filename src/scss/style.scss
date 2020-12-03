@@ -1,15 +1,11 @@
+@import '_normalize.scss';
 @import '_mixins.scss';
 @import '_fonts.scss';
-@import 'block.scss';
+@import '_grid.scss';
+@import '_header.scss';
 
-
-.container{
-    display: flex;
-    transition: all 1 ease-out;
-    width:800px;
-    margin: 0 auto;
-    &__child{
-        background-color:green;
-        color:black;
-    }
+body{
+    min-width: 320px;
+    overflow: hidden;
+    font-family:'Poppins-Regular';
 }
