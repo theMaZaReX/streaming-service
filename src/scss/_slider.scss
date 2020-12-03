@@ -1,0 +1,119 @@
+.slick-track{
+    display: flex;
+    align-items: center;
+}
+
+.slick-slide{
+    width: 970px;
+    margin-right:30px;
+}
+
+
+.slick-list{
+    min-width: 0;
+}
+
+.slider{
+    background-image:url('../img/LCDP.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+    &__item{
+        display: block;
+        background-image: url('../img/slide-photo.jpg');
+        background-repeat: no-repeat;
+        min-height: 520px;
+        position: relative;
+        color:#fff;
+        border-radius: 20px;
+        &-overlay{
+            border-radius: 20px;
+            background: linear-gradient(-90deg, rgba(255,255,255,0) 0%, rgba(65,79,87,1) 69%);
+            background-size:cover;
+            position: absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+        }
+        &-text{
+            padding:70px 0px 0px 30px;
+        }
+        &-name{
+            font-family:'Poppins-SemiBold', sans-serif;
+            font-weight: 600;
+            font-size: 30px;
+            margin-bottom:25px;
+        }
+        &-description{
+            font-family: 'MyriadPro-Regular', sans-serif;
+            font-size: 16px;
+            max-width: 433px;
+            margin-bottom:30px;
+        }
+    }
+    &__roster{
+        font-size: 16px;
+        &-title{
+            font-family: 'Poppins-Medium' sans-serif; 
+            margin-bottom: 15px;
+        }
+        &-list{
+            font-family: 'Poppins-Regular' sans-serif;  
+            list-style-type: none;
+        }
+        &-item{
+            display: inline-block;
+            text-decoration: underline;
+        }
+    }
+    &__roster:not(:last-child){
+        margin-bottom: 27px;
+    }
+    &__ratings{
+        margin-top:40px;
+    }
+}
+
+.ratings{
+    display: flex;
+    justify-content: space-between;
+    max-width: 175px;
+    position: relative;
+    padding-left: 30px;
+    &__tomato{
+        display: flex;
+        align-items: center;
+        &::before{
+            content:"";
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url('../img/tomato.png');
+        }
+    }
+    &__tomato &__score{
+        margin-left: 38px;;
+    }
+    &__popcorn{
+        display: flex;
+        align-items: center;
+        &::before{
+            content:"";
+            display: block;
+            position: absolute;
+            width: 25px;
+            height: 30px;
+            background-image: url('../img/fresh.png');
+        }
+   }
+   &__popcorn &__score{
+    margin-left:31px;
+}
+}
+
+
+
+

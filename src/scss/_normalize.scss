@@ -9,8 +9,13 @@
  */
 
 html {
+  box-sizing: border-box;
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+*,*:after,*:before{
+  box-sizing: inherit;
 }
 
 /* Sections
@@ -68,6 +73,15 @@ pre {
 
 /* Text-level semantics
    ========================================================================== */
+
+h1,h2,h3,h4,h5,h6{
+  margin:0;
+}
+
+ul{
+  margin:0;
+  padding:0;
+}
 
 /**
  * Remove the gray background on active links in IE 10.

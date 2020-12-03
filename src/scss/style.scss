@@ -3,9 +3,10 @@
 @import '_fonts.scss';
 @import '_grid.scss';
 @import '_header.scss';
+@import '_slider.scss';
 
 body{
     min-width: 320px;
     overflow: hidden;
-    font-family:'Poppins-Regular';
+    font-family:'Poppins-Regular', sans-serif;
 }
