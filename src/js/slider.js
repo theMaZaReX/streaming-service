@@ -6,6 +6,7 @@ $(document).ready(function(){
         slidesToScroll: 1,
         variableWidth:true,
         arrows:false,
+        focusOnSelect: false
       }
     )
   });

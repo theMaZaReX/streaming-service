@@ -1,0 +1,8 @@
+{
+    "indentRainbow.includedLanguages": [
+        "html"
+    ],
+    "indentRainbow.excludedLanguages": [
+    ".js", "plaintext"
+    ]
+}
