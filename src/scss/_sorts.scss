@@ -1,0 +1,36 @@
+.sorts{
+   display: flex;
+   align-items: center;
+   position: relative;
+  // margin-left: auto;
+    &__current{
+        font-family: 'Poppins-Medium', sans-serif;
+        font-weight: 500;
+        color:#ffffff;
+        &::after{
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border: 2px solid #d9d9d9;
+            border-top: none;
+            border-right: none;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            margin-left: 13px;
+            margin-bottom: 3px;
+        }
+    }
+    &__list{
+        position: absolute;
+        font-family: 'Poppins-Medium', sans-serif;
+        font-weight: 500;
+        color:#ffffff;
+        right: 38px;
+        top: 31px;
+        &-item{
+            border-bottom:1px solid #d9d9d9;
+        }
+    }
+}

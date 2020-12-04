@@ -4,9 +4,21 @@
 @import '_grid.scss';
 @import '_header.scss';
 @import '_slider.scss';
+@import '_filter.scss';
+@import '_sorts.scss';
+@import '_movies.scss';
 
 body{
     min-width: 320px;
-    overflow: hidden;
     font-family:'Poppins-Regular', sans-serif;
+}
+
+.main{
+    background-color: #2f3642;
+    &__filter-type{
+        margin-right: 50px;
+    }
+    &__filter-genre{
+        margin-right: 60px;
+    }
 }
