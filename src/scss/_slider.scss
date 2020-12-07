@@ -101,6 +101,7 @@
     max-width: 175px;
     position: relative;
     padding-left: 30px;
+    color:#fff;
     &__tomato{
         display: flex;
         align-items: center;
@@ -126,6 +127,7 @@
             width: 25px;
             height: 30px;
             background-image: url('../img/fresh.png');
+            background-size: cover;
         }
    }
    &__popcorn &__score{

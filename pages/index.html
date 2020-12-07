@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Streaming service</title>
     <link rel='stylesheet' href='../src/css/style.min.css'>
-    <script src='../src/js/scripts.min.js'></script>
 </head>
 
 <body>
@@ -167,13 +166,12 @@
         <div class="movies">
             <div class="container">
                 <div class="filter">
-                        <div class="filter-company">
-                            <span class="filter-company__item">All</span>
-                            <span class="filter-company__item">Netflix</span>
-                            <span class="filter-company__item">Amazon Prime</span>
-                        </div>
-                    
-                        <div class="filter-sort__filter">
+                    <div class="filter-company">
+                        <span class="filter-company__item">All</span>
+                        <span class="filter-company__item">Netflix</span>
+                        <span class="filter-company__item">Amazon Prime</span>
+                    </div>
+                    <div class="filter-sort__filter">
                         <div class="filter-type main__filter-type">
                             <div class="filter-type__item">
                                 <input class="filter-type__checkbox" id="type-tv" type="checkbox" name="checkbox-tv" >
@@ -205,28 +203,514 @@
                             </ul>
                         </div>
                         <div class="filter-age">
-                            <span class="filter-age-name">Age</span>
+                            <span class="filter-age__name">Age</span>
                             <div class="filter-age__rng">
-                                <span class="filter-age__rng-left"></span>
-                                <span class="filter-age__rng-right"></span>
+                                <span class="filter-age__rng-start" data-min='1888'></span>
+                                <span class="filter-age__rng-end" data-max="2019"></span>
+                                <div class="filter-age__rng-overlay"></div>
                             </div>
                         </div>
                     
                         <div class="sorts">
-                            <div>Sorts by  <span class="sorts__current"><a href="#">Critic's score</a></span></div> 
+                            <div>Sorts by  <span class="sorts__current">Critic's score</span></div> 
                             <ul class="sorts__list">
                                 <li class="sorts__list-item"><a href="#" class="sorts__list-link"> User score</a></li>
                             </ul>
                         </div>
                     </div>
-                    </div>
                 </div>
+                <div class="movies-list">
+                   <div class="movies-list__item">
+                       <div class="movies-list__poster">
+                           <img class="movies-list__img" src="../src/img/American_vandal.jpg"></img>
+                           <span class="movies-list__company-netflix">Netflix</span>
+                       </div>
+                       <div class="movies-list__descr">
+                       <span class="movies-list__name">American Vandal</span>
+                        <span class="movies-list__age">2017, </span>
+                        <span class="movies-list__type">Tv</span>
+                         </div> 
+                        <div class="ratings movies-list__ratings">
+                            <div class="ratings__tomato">
+                                <div class="ratings__score">98%</div>
+                            </div>
+                            <div class="ratings__popcorn">
+                                <div class="ratings__score">91%</div>
+                            </div>
+                        </div>
+                       
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/Mindhunter.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Mindhunter</span>
+                    <span class="movies-list__age">2017, </span>
+                    <span class="movies-list__type">TV</span>
+                </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">97%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">95%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/kingdom.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Kingdom</span>
+                    <span class="movies-list__age">2019, </span>
+                    <span class="movies-list__type">TV</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">96%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">96%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/unarthodox.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Unorthodox</span>
+                    <span class="movies-list__age">2020, </span>
+                    <span class="movies-list__type">Tv</span>
+                </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">95%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">94%</div>
+                     </div>
+                 </div>
+                   
+                </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/Sexeduc.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Sex Education</span>
+                    <span class="movies-list__age">2019, </span>
+                    <span class="movies-list__type">Tv</span>
+                </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">94%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">91%</div>
+                     </div>
+                 </div>
+                  
+                  
+                </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/stranger.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Stranger Things</span>
+                    <span class="movies-list__age">2016, </span>
+                    <span class="movies-list__type">Tv</span>
+                </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">93%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">91%</div>
+                     </div>
+                 </div>
+                  
+                </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/bojack.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Bojack Gorseman</span>
+                    <span class="movies-list__age">2014, </span>
+                    <span class="movies-list__type">tv</span>
+                </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">93%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">95%</div>
+                     </div>
+                 </div>
+                  
+                </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/the_end_of.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">The end of the f***ing World</span>
+                    <span class="movies-list__age">2019, </span>
+                    <span class="movies-list__type">Tv</span>
+                </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">93%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">90%</div>
+                     </div>
+                 </div>
+                   
+                </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/bodyguard.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Bodyguard</span>
+                    <span class="movies-list__age">2018, </span>
+                    <span class="movies-list__type">Tv</span>
+                </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">93%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">83%</div>
+                     </div>
+                 </div>
+                 
+                </div>
+           
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/castlevania.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Castlevania</span>
+                    <span class="movies-list__age">2017, </span>
+                    <span class="movies-list__type">Tv</span>
+                </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">93%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">88%</div>
+                     </div>
+                 </div>
+                
+                </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/Money heist.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Money Heist</span>
+                    <span class="movies-list__age">2017, </span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">93%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">81%</div>
+                     </div>
+                 </div>
+               </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/marvells.jpg"></img>
+                        <span class="movies-list__company-amazon">Amazon</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Marvel's Daredevil</span>
+                    <span class="movies-list__age">2015, </span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">92%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">92%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/peaky.jpg"></img>
+                        <span class="movies-list__company-amazon">Amazon</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Peaky Blinders</span>
+                    <span class="movies-list__age">2013, </span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">92%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">94%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/orange.jpg"></img>
+                        <span class="movies-list__company-amazon">Amazon</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Orange is the New Black</span>
+                    <span class="movies-list__age">2013</span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">90%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">81%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/crown.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">The Crown</span>
+                    <span class="movies-list__age">2016, </span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">89%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">90%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/narcos.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Narcos</span>
+                    <span class="movies-list__age">2015, </span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">89%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">94%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/Cage.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Marvel's Luke Cage</span>
+                    <span class="movies-list__age">2016, </span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">87%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">71%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/Lucifer.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Lucifier</span>
+                    <span class="movies-list__age">2016, </span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">87%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">86%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/Sense.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Sense8</span>
+                    <span class="movies-list__age">2015, </span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">86%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">91%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/i am nar.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">I Am Nor Okay With This</span>
+                    <span class="movies-list__age">2020, </span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">86%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">86%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/Chilling.jpg"></img>
+                        <span class="movies-list__company-amazon">Amazon</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Chilling Adventures of Sabrina</span>
+                    <span class="movies-list__age">2018, </span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">84%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">69%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/Black.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Black Mirror</span>
+                    <span class="movies-list__age">2011, </span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">83%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">81%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/Kesscia.jpg"></img>
+                        <span class="movies-list__company-amazon">Amazon</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Marvel's Jessica Jones</span>
+                    <span class="movies-list__age">2015, </span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">83%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">78%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/House.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">House of Cards</span>
+                    <span class="movies-list__age">2013, </span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">77%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">76%</div>
+                     </div>
+                 </div>
+                   </div>
+                   <div class="movies-list__item">
+                    <div class="movies-list__poster">
+                        <img class="movies-list__img" src="../src/img/Russian_doll.jpg"></img>
+                        <span class="movies-list__company-netflix">Netflix</span>
+                    </div>
+                    <div class="movies-list__descr">
+                    <span class="movies-list__name">Russian Doll</span>
+                    <span class="movies-list__age">2019, </span>
+                    <span class="movies-list__type">Tv</span>
+                    </div>
+                    <div class="ratings movies-list__ratings">
+                     <div class="ratings__tomato">
+                         <div class="ratings__score">97%</div>
+                     </div>
+                     <div class="ratings__popcorn">
+                         <div class="ratings__score">87%</div>
+                     </div>
+                 </div>
+                   </div>
+                
+              
             </div>
         </div>
     </main>
-    <script src='../node_modules/jquery/dist/jquery.min.js'></script>
-    <script type="text/javascript">
-    </script>
+    <script defer src='../src/js/scripts.min.js'></script>
 </body>
 
 </html>

@@ -4,6 +4,7 @@
    position: relative;
   // margin-left: auto;
     &__current{
+        display: inline-block;
         font-family: 'Poppins-Medium', sans-serif;
         font-weight: 500;
         color:#ffffff;

@@ -120,9 +120,36 @@
     display: flex;
     align-items: center;
     flex-grow:1;
+    &__name{
+        margin-right: 22px;
+    }
     &__rng{
         flex-basis: 350px;
         height:3px;
         background: #666666;
+        position: relative;
+        &-start, &-end{
+            position: absolute;
+            top:-6px;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-color: #d9d9d9;
+            border-radius:50%;
+            z-index:2;
+            cursor: pointer;
+        }
+        &-end{
+            right:0;
+        }
+        &-overlay{
+            height: 3px;
+            background-color: #d9d9d9;
+            position: absolute;
+            left:0;
+            right:0;
+            z-index:1;
+        }
     }
+
 }
