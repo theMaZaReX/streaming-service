@@ -51,4 +51,34 @@
         right: 4%;
         cursor: pointer;
     }
+    &__input.search__input--open{
+        width: 320px;
+    }
 }
+
+@media (max-width:768px){
+    .search{
+       &:hover &__input{
+        width:300px;
+       }
+        &__input{
+            width:0px;
+            transition: 0.5s;
+        }
+        &__button{
+            background-color: transparent;
+        }
+    }
+}
+
+@media (max-width:576px){
+    .header{
+         &__inner.header__inner--search-open{
+            flex-wrap: wrap;
+            justify-content: center;
+            padding:8px;
+        }
+    }
+    
+}
+

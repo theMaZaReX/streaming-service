@@ -8,6 +8,12 @@
     margin-right:30px;
     outline: none;
 }
+@media(max-width:992px){
+    .slick-slide{
+        width: 670px;  
+    } 
+}
+
 
 .slick-list draggable{
     min-width: 0;
