@@ -26,12 +26,15 @@
     font-family: 'Poppins-Regular', sans-serif;
     font-size: 14px;
     position: relative;
+ 
     &__input{
         background-color: #414f57;
         min-height: 35px;
         border-radius: 17px;
         border:0px;
         width:300px;
+        color:#fff;
+        padding:0px 5px;
     }
     &__input::placeholder{
         padding-left:12px;
@@ -58,12 +61,10 @@
 
 @media (max-width:768px){
     .search{
-       &:hover &__input{
-        width:300px;
-       }
         &__input{
             width:0px;
             transition: 0.5s;
+            padding:0px;
         }
         &__button{
             background-color: transparent;
