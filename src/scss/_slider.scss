@@ -13,6 +13,22 @@
         width: 670px;  
     } 
 }
+@media(max-width:768px){
+    .slick-slide{
+        width: 549px;  
+    } 
+    .slider{
+        &__item{
+            background-position: top center;
+        }
+    }
+}
+
+@media(max-width:576px){
+    .slick-slide{
+        width: 320px;  
+    } 
+}
 
 
 .slick-list draggable{

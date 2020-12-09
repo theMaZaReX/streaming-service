@@ -84,6 +84,20 @@
       
 }
 
+.btn{
+    padding-top: 13px;
+    padding-bottom: 15px;
+    background-color: #e73327;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 210px;
+    margin: 0 auto;
+    font-family:'Poppins-Medium', sans-serif;
+    font-size: 18px;
+    color:#fff;
+    cursor: pointer;
+}
+
 @media(max-width:768px){
     .movies-list{
         justify-content: space-around;
