@@ -5,8 +5,7 @@ const rangeOverlay = document.querySelector('.filter-age__rng-overlay');
 let minAgeStart = parseInt(ageStart.getAttribute('data-min')); 
 let maxAgeEnd = parseInt(ageEnd.getAttribute('data-max')); 
 let ageDiff = maxAgeEnd - minAgeStart;
-let rightStatic = 0;
-let leftStatic = 0;
+
 
 
 const getCoords = function (elem) {
@@ -109,12 +108,13 @@ const moveRight = function(shiftBtn, rangeCoords, btn1Coords, btn2Coords){
 }
 
 const move = function(shiftBtn, rangeCoords){
-  console.log(this);
-  let btn1Coords = getCoords(ageStart);
-  let btn2Coords = getCoords(ageEnd);
- 
-  if (this===ageStart) moveLeft(shiftBtn, rangeCoords, btn1Coords, btn2Coords);
-  if (this===ageEnd) moveRight(shiftBtn, rangeCoords, btn1Coords, btn2Coords);
+  
+      let btn1Coords = getCoords(ageStart);
+      let btn2Coords = getCoords(ageEnd);
+    
+      if (this===ageStart) moveLeft(shiftBtn, rangeCoords, btn1Coords, btn2Coords);
+      if (this===ageEnd) moveRight(shiftBtn, rangeCoords, btn1Coords, btn2Coords);
+  
 }
 
 
@@ -125,11 +125,16 @@ ageStart.addEventListener('mousedown', function(event){
     let btn1Coords = getCoords(ageStart);
     let rangeCoords = getCoords(range);
     let shiftBtn1 = event.pageX - btn1Coords.left;
+    const prevDefSelection = function(event){
+      event.preventDefault();
+    }
     const moveBounded = move.bind(this, shiftBtn1, rangeCoords); 
     
+    document.addEventListener('selectstart', prevDefSelection);
     document.addEventListener('mousemove', moveBounded);
     document.addEventListener('mouseup', function(){
         document.removeEventListener('mousemove', moveBounded);
+        document.removeEventListener('selectstart', prevDefSelection);
     })
 });
 
@@ -138,11 +143,15 @@ ageEnd.addEventListener('mousedown', function(event){
   let btn2Coords = getCoords(ageEnd);
   let rangeCoords = getCoords(range);
   let shiftBtn2 = event.pageX - btn2Coords.right;
+  const prevDefSelection = function(event){
+    event.preventDefault();
+  }
   const moveBounded = move.bind(this, shiftBtn2, rangeCoords); 
-  
+  document.addEventListener('selectstart', prevDefSelection);
   document.addEventListener('mousemove', moveBounded);
   document.addEventListener('mouseup', function(){
      document.removeEventListener('mousemove', moveBounded);
+     document.removeEventListener('selectstart', prevDefSelection);
   })
 });
 
