@@ -21,23 +21,45 @@ const getCoords = function (elem) {
   }
 
 const calcMoveStep = function(btnAge = '', shiftBtn, rangeCoords){
-if (btnAge == 'ageStart'){
-  let left =  event.pageX - shiftBtn - rangeCoords.left;
-  let step  = Math.ceil((left/(rangeCoords.width/ageDiff)));
-  return {
-    left: left,
-    step: step
-  }
-}
+  if (event.type ==='mousemove'){
+    if (btnAge == 'ageStart'){
+      let left =  event.pageX - shiftBtn - rangeCoords.left;
+      let step  = Math.ceil((left/(rangeCoords.width/ageDiff)));
+      return {
+        left: left,
+        step: step
+      }
+    }
 
-if(btnAge == 'ageEnd'){
-  let right = rangeCoords.right- event.pageX + shiftBtn;
-  let step  = parseInt((right/(rangeCoords.width/ageDiff)));
-  return {
-    right: right,
-    step: step
+    if(btnAge === 'ageEnd'){
+      let right = rangeCoords.right- event.pageX + shiftBtn;
+      let step  = parseInt((right/(rangeCoords.width/ageDiff)));
+      return {
+        right: right,
+        step: step
+      }
+    }
   }
-}
+
+  if (event.type ==='touchmove'){
+    if (btnAge == 'ageStart'){
+      let left =   event.changedTouches[0].pageX - shiftBtn - rangeCoords.left;
+      let step  = Math.ceil((left/(rangeCoords.width/ageDiff)));
+      return {
+        left: left,
+        step: step
+      }
+    }
+
+    if(btnAge == 'ageEnd'){
+      let right = rangeCoords.right-  event.changedTouches[0].pageX + shiftBtn;
+      let step  = parseInt((right/(rangeCoords.width/ageDiff)));
+      return {
+        right: right,
+        step: step
+      }
+    }
+  }
 }
 
 const moveLeft = function(shiftBtn, rangeCoords, btn1Coords, btn2Coords){
@@ -87,7 +109,7 @@ const moveRight = function(shiftBtn, rangeCoords, btn1Coords, btn2Coords){
 }
 
 const move = function(shiftBtn, rangeCoords){
-  
+  console.log(this);
   let btn1Coords = getCoords(ageStart);
   let btn2Coords = getCoords(ageEnd);
  
@@ -99,7 +121,7 @@ const move = function(shiftBtn, rangeCoords){
 
 
 ageStart.addEventListener('mousedown', function(event){
-  console.log(event.target);
+
     let btn1Coords = getCoords(ageStart);
     let rangeCoords = getCoords(range);
     let shiftBtn1 = event.pageX - btn1Coords.left;
@@ -107,12 +129,12 @@ ageStart.addEventListener('mousedown', function(event){
     
     document.addEventListener('mousemove', moveBounded);
     document.addEventListener('mouseup', function(){
-    document.removeEventListener('mousemove', moveBounded);
+        document.removeEventListener('mousemove', moveBounded);
     })
 });
 
 ageEnd.addEventListener('mousedown', function(event){
-  console.log(event.target);
+
   let btn2Coords = getCoords(ageEnd);
   let rangeCoords = getCoords(range);
   let shiftBtn2 = event.pageX - btn2Coords.right;
@@ -120,8 +142,36 @@ ageEnd.addEventListener('mousedown', function(event){
   
   document.addEventListener('mousemove', moveBounded);
   document.addEventListener('mouseup', function(){
-  document.removeEventListener('mousemove', moveBounded);
+     document.removeEventListener('mousemove', moveBounded);
   })
 });
 
+
+ageStart.addEventListener('touchstart', function(event){
+
+    let btn1Coords = getCoords(ageStart);
+    let rangeCoords = getCoords(range);
+    let shiftBtn1 = event.changedTouches[0].pageX - btn1Coords.left;
+    const moveBounded = move.bind(this, shiftBtn1, rangeCoords); 
+    
+    document.addEventListener('touchmove', moveBounded);
+    document.addEventListener('touchend', function(){
+        document.removeEventListener('touchmove', moveBounded);
+     
+    })
+});
+
+ageEnd.addEventListener('touchstart', function(event){
+
+  let btn2Coords = getCoords(ageEnd);
+  let rangeCoords = getCoords(range);
+  let shiftBtn2 = event.changedTouches[0].pageX - btn2Coords.right;
+  const moveBounded = move.bind(this, shiftBtn2, rangeCoords); 
+  
+  document.addEventListener('touchmove', moveBounded);
+  document.addEventListener('touchend', function(){
+     document.removeEventListener('touchmove', moveBounded);
+
+  })
+});
 
