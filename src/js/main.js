@@ -2,17 +2,12 @@ const moviesName = document.querySelectorAll('.movies-list__name');
 const searchBtn = document.querySelector('.search__button');
 const searchInput = document.querySelector('.search__input');
 const headerInner = document.querySelector('.header__inner');
+const moviesList = document.querySelector('.movies-list');
+const moviesItem = document.querySelector('.movies-list__item');
+const btnMore = document.querySelector('.btn');
 let searchInputOpenned = false; 
-
-document.addEventListener("DOMContentLoaded", function(){
-    moviesName.forEach(function(elem){
-        if(elem.innerText.length>=26){
-            elem.innerText+=', ';
-            elem.style.display = 'inline';
-        }
-   
-    })
-});
+let rowMoviesToShow = 2;
+let rowMoviesHeight = moviesItem.offsetHeight + 30;
 
 const openSearchInput = function(){
     if(!searchInputOpenned){
@@ -25,4 +20,44 @@ const openSearchInput = function(){
     }
 }
 
-searchBtn.addEventListener("click", openSearchInput);
+const lineBreak = function(elem){
+    if(elem.innerText.length>=26){
+        elem.innerText+=', ';
+        elem.style.display = 'inline';
+    }
+}
+
+const addMoviesRow = function(){
+    let itemsInRow = Math.floor(moviesList.offsetWidth / moviesItem.offsetWidth);
+    let maxRows = Math.ceil(moviesList.children.length / itemsInRow);
+    let maxHeightMoviesRows = maxRows * rowMoviesHeight;
+    if ((moviesList.offsetHeight + (rowMoviesHeight*rowMoviesToShow) >= maxHeightMoviesRows)){
+        moviesList.style.height = maxHeightMoviesRows + 'px';
+        btnMore.style.backgroundColor = 'black';
+        btnMore.style.cursor = 'auto';
+        btnMore.removeEventListener('click',addMoviesRow);
+    }
+    else{
+        moviesList.style.height = moviesList.offsetHeight + (rowMoviesHeight*rowMoviesToShow) +  'px';       
+    }   
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+    moviesName.forEach(function(elem){
+        lineBreak(elem);
+    })
+
+    
+    moviesList.style.overflow = 'hidden';
+    moviesList.style.height = rowMoviesHeight*rowMoviesToShow + 'px';
+    
+});
+
+btnMore.addEventListener('click', addMoviesRow);
+
+
+if (window.screen.width <= 768){
+    searchBtn.addEventListener("click", openSearchInput);
+}
+
+
