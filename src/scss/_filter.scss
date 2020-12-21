@@ -141,6 +141,26 @@
         }
         &-end{
             right:0;
+            background-color:red;
+        }
+        &-start{
+            background-color:green;
+        }
+        &-start:before{
+            content:attr(data-min);
+            position: absolute;
+            top:-20px;
+            left:-10px;
+            display: inline-block;
+           
+        }
+        &-end:before{
+            content:attr(data-max);
+            position: absolute;
+            top:-20px;
+            left:-10px;
+            display: inline-block;
+          
         }
         &-overlay{
             height: 3px;
