@@ -10,7 +10,7 @@
     &__poster{
         position: relative;
     }
-    &__company-netflix, &__company-amazon{
+    &__company{
         position: absolute;
         font-family: "Poppins-Medium", sans-serif;
         font-weight: 500;
@@ -95,6 +95,11 @@
     font-size: 18px;
     color:#fff;
     cursor: pointer;
+}
+
+@media(max-width:992px){
+.btn{
+    display:none}
 }
 
 @media(max-width:768px){

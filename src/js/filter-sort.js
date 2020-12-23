@@ -8,6 +8,10 @@ let ageDiff = maxAgeEnd - minAgeStart;
 
 
 
+
+
+
+// Визаульная часть кастомного range
 const getCoords = function (elem) {
     let box = elem.getBoundingClientRect();
   
@@ -117,6 +121,29 @@ const move = function(shiftBtn, rangeCoords){
   
 }
 
+// фильтр
+const updateHeightMoviesList = function(maxItemsInRow, rowMoviesHeight){
+  
+  let numberItems = numberActiveMovies(arrMoviesItems);
+  let hasListener = false;
+  
+      numberRows = Math.ceil(numberItems / maxItemsInRow);
+      if (numberRows<=rowMoviesToShow){
+          moviesList.style.height = (numberRows * rowMoviesHeight) + 'px';
+          btnMore.style.backgroundColor = 'black';
+          btnMore.style.cursor = 'auto';
+          btnMore.removeEventListener('click',addMoviesRow);
+          hasListener = true;
+      }
+      else{
+          moviesList.style.height = (rowMoviesToShow * rowMoviesHeight) + 'px'; 
+          if (!hasListener){
+              btnMore.addEventListener('click',addMoviesRow);
+              btnMore.style.backgroundColor = '#e73327';
+              btnMore.style.cursor = 'pointer';
+          }
+      }
+}
 
 
 
@@ -184,3 +211,120 @@ ageEnd.addEventListener('touchstart', function(event){
   })
 });
 
+// Визаульная часть кастомного range
+
+
+
+// Фильтр
+const moviesType =  document.querySelectorAll('.movies-list__item .movies-list__type');
+const checkTV = document.getElementById('type-tv');
+const checkMovie = document.getElementById('type-movie');
+const filtrCompany = document.querySelector('.filter-company');
+const moviesCompany = document.querySelector('.filter-company');
+
+
+const filtrType = function(checkbox, type){
+  const arrMoviesItems = [...moviesList.children];
+  const arrMoviesType = [...moviesType];
+
+  if (((checkTV.checked) && (checkMovie.checked)) || (!(checkTV.checked) && !(checkMovie.checked))){
+    for (i = 0; i<arrMoviesItems.length; i++){
+      arrMoviesItems[i].style.display = 'inline-flex';
+    }
+    return true;
+  }
+
+  if (checkbox.checked){
+    for (i = 0; i<arrMoviesItems.length; i++){
+      if (arrMoviesType[i].getAttribute('data-type') !== type){
+        arrMoviesItems[i].style.display = 'none';
+      }
+    }
+   }
+   else{
+    for (i = 0; i<arrMoviesItems.length; i++){
+      if (arrMoviesType[i].getAttribute('data-type') === type){
+        arrMoviesItems[i].style.display = 'none';
+      }
+  }
+  }
+  
+  
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+  
+  moviesType.forEach(function(element){
+    let type = element.innerText.toLowerCase();
+      element.setAttribute('data-type', type);
+  });
+  
+  checkMovie.addEventListener('click', function(){
+    filtrType(checkMovie, 'MOVIE');
+  });
+  checkTV.addEventListener('click', function(){
+    filtrType(checkTV, 'TV');
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function(){
+  const filtrCompanyItems = [...filtrCompany.children];
+  
+  moviesType.forEach(function(element){
+      element.setAttribute('data-type', element.innerText);
+  });
+  
+  checkMovie.addEventListener('click', function(){
+    filtrType(checkMovie, 'MOVIE');
+  });
+  checkTV.addEventListener('click', function(){
+    filtrType(checkTV, 'TV');
+  });
+
+  filtrCompanyItems.forEach(function(element){
+    element.addEventListener('click', function(){
+      console.log(element);
+    })
+  })
+
+});
+
+
+document.addEventListener("DOMContentLoaded", function(){
+  
+  moviesType.forEach(function(element){
+      element.setAttribute('data-type', element.innerText);
+  });
+  
+  checkMovie.addEventListener('click', function(){
+    filtrType(checkMovie, 'MOVIE');
+    if (window.screen.width >= 992){
+    updateHeightMoviesList(maxItemsInRow, rowMoviesHeight);
+    }
+  });
+  checkTV.addEventListener('click', function(){
+    filtrType(checkTV, 'TV');
+    if (window.screen.width >= 992){
+      updateHeightMoviesList(maxItemsInRow, rowMoviesHeight);
+      }
+  });
+});
+
+  
+
+document.addEventListener("DOMContentLoaded", function(){
+  
+  moviesType.forEach(function(element){
+      element.setAttribute('data-type', element.innerText);
+  });
+  
+  checkMovie.addEventListener('click', function(){
+    filtrType(checkMovie, 'MOVIE');
+  });
+  checkTV.addEventListener('click', function(){
+    filtrType(checkTV, 'TV');
+  });
+});
+
+  

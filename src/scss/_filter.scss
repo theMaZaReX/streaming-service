@@ -27,6 +27,7 @@
         margin-bottom: 20px;
         border-bottom:1px solid #fff;
     &__item{
+        cursor: pointer;
         &:not(:last-child){
             margin-right: 53px;
         }
