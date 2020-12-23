@@ -251,7 +251,7 @@ const filtrType = function(checkbox, type){
   
   
 }
-
+/*
 document.addEventListener("DOMContentLoaded", function(){
   
   moviesType.forEach(function(element){
@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
-
+*/
 document.addEventListener("DOMContentLoaded", function(){
   
   moviesType.forEach(function(element){
@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
   
-
+/*
 document.addEventListener("DOMContentLoaded", function(){
   
   moviesType.forEach(function(element){
@@ -326,5 +326,5 @@ document.addEventListener("DOMContentLoaded", function(){
     filtrType(checkTV, 'TV');
   });
 });
-
+*/
   
