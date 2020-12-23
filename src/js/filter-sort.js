@@ -251,46 +251,7 @@ const filtrType = function(checkbox, type){
   
   
 }
-/*
-document.addEventListener("DOMContentLoaded", function(){
-  
-  moviesType.forEach(function(element){
-    let type = element.innerText.toLowerCase();
-      element.setAttribute('data-type', type);
-  });
-  
-  checkMovie.addEventListener('click', function(){
-    filtrType(checkMovie, 'MOVIE');
-  });
-  checkTV.addEventListener('click', function(){
-    filtrType(checkTV, 'TV');
-  });
-});
 
-
-document.addEventListener("DOMContentLoaded", function(){
-  const filtrCompanyItems = [...filtrCompany.children];
-  
-  moviesType.forEach(function(element){
-      element.setAttribute('data-type', element.innerText);
-  });
-  
-  checkMovie.addEventListener('click', function(){
-    filtrType(checkMovie, 'MOVIE');
-  });
-  checkTV.addEventListener('click', function(){
-    filtrType(checkTV, 'TV');
-  });
-
-  filtrCompanyItems.forEach(function(element){
-    element.addEventListener('click', function(){
-      console.log(element);
-    })
-  })
-
-});
-
-*/
 document.addEventListener("DOMContentLoaded", function(){
   
   moviesType.forEach(function(element){
@@ -312,19 +273,5 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
   
-/*
-document.addEventListener("DOMContentLoaded", function(){
-  
-  moviesType.forEach(function(element){
-      element.setAttribute('data-type', element.innerText);
-  });
-  
-  checkMovie.addEventListener('click', function(){
-    filtrType(checkMovie, 'MOVIE');
-  });
-  checkTV.addEventListener('click', function(){
-    filtrType(checkTV, 'TV');
-  });
-});
-*/
+
   
