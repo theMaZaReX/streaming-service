@@ -68,11 +68,11 @@
         background-size: cover;
       
       }
-      &__ratings .ratings__tomato .ratings__score{
+      &__ratings .ratings__tomato .ratings__tomato-score{
           margin-left:27px;
           margin-right:15px;
       }
-      &__ratings .ratings__popcorn .ratings__score{
+      &__ratings .ratings__popcorn .ratings__user-score{
         margin-left:21px;
     }
       &__ratings .ratings__popcorn::before{

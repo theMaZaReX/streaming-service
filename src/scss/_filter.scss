@@ -74,14 +74,17 @@
 .filter-genre{
     position: relative;
     &__btn{
+        position: relative;
         display: flex;
         border:none;
         background-color: #566269;
         color:#d9d9d9;
         border-radius:5px;
         padding: 12px 0px 12px 16px;
+        width: 120px;
         &::after{
             content:'';
+            position: absolute;
             width: 10px;
             height: 10px;
             border:2px solid #d9d9d9;
@@ -89,17 +92,19 @@
             border-right:none;
             transform: rotate(-45deg);
             margin-top:2px;
-            margin-left:19px;
-            margin-right:14px
+            right: 5px;
         }
     }
     &__list{
-       // display: none;
+       display: none;
        position: absolute;
        background-color:#566269;
        margin-top:-3px;
        width:100%;
-        
+       z-index:2;
+    }
+    &__list--show{
+        display:inline-block;
     }
     &__item{
         transition: 0.5s all;
@@ -113,7 +118,7 @@
         display: inline-block;
         width: 100%;
         padding: 12px 0px 12px 16px; 
-        display: none;
+        
     }
 }
 
@@ -183,6 +188,7 @@
          font-family: 'Poppins-Medium', sans-serif;
          font-weight: 500;
          color:#ffffff;
+         cursor: pointer;
          &::after{
              content: '';
              display: inline-block;
@@ -199,17 +205,20 @@
          }
      }
      &__list{
+         display: none;
          position: absolute;
          font-family: 'Poppins-Medium', sans-serif;
          font-weight: 500;
          color:#ffffff;
-         right: 38px;
+         right: 10px;
          top: 31px;
          &-item{
              border-bottom:1px solid #d9d9d9;
-             
          }
          
+     }
+     &__list--show{
+        display:inline-block;
      }
  }
 
